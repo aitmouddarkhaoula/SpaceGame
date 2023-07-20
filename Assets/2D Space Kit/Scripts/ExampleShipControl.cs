@@ -61,14 +61,14 @@ public class ExampleShipControl : MonoBehaviour {
 
 		if(!GameManager.Instance.InGame) return;
 		Vector2 vector = TouchPad.instance.velocityDirection;
-		transform.Translate(new Vector3(vector.x*Time.deltaTime*_moveSpeed, _speed*Time.deltaTime,-1));
+		transform.Translate(new Vector2(vector.x*Time.deltaTime*_moveSpeed, _speed*Time.deltaTime));
         if (transform.position.x > 11)
         {
-            transform.position = new Vector3(11, transform.position.y,-1);
+            transform.position = new Vector3(11, transform.position.y);
         }
         if (transform.position.x<-11)
         {
-            transform.position = new Vector3(-11, transform.position.y,-1);
+            transform.position = new Vector3(-11, transform.position.y);
 			
         }
 
